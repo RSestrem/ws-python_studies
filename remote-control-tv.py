@@ -1,8 +1,10 @@
 """
 Simple classes interactions exercise.
 
-Television has volume, channel and on/off functions;
-Remote Control has the ability to interact with television functions.
+-> Television class has volume, channel and on/off functions;
+
+-> Remote Control class has the ability to interact with television functions
+and can display the selected volume and/or channel.
 """
 
 
@@ -14,10 +16,12 @@ class Television:
         self.__max_volume = 50
         self.__max_channel = 999
 
-    def get_max_volume(self):  # returns the Television maximum volume
+    @property
+    def max_volume(self):  # returns the Television maximum volume
         return self.__max_volume
 
-    def get_max_channel(self):  # returns the Television maximum channel
+    @property
+    def max_channel(self):  # returns the Television maximum channel
         return self.__max_channel
 
     def tv_turn_on(self):  # turns the Television on
@@ -70,12 +74,12 @@ class RemoteControl:
     def rc_volume_up(self):  # interacts with 'volume up' TV method if TV's on
         if self.__tv_object.tv_on:
             if self.__tv_object.current_volume < \
-                    self.__tv_object.get_max_volume():
+                    self.__tv_object.max_volume:
                 self.__tv_object.tv_volume_up()
             else:
                 print(
                     f'TV is at the maximum volume: '
-                    f'{self.__tv_object.get_max_volume()}')
+                    f'{self.__tv_object.max_volume}')
 
     def rc_volume_down(self):  # interacts with 'volume down' TV method
         if self.__tv_object.tv_on:
@@ -87,12 +91,12 @@ class RemoteControl:
     def rc_channel_up(self):  # interacts with 'channel up' TV method.
         if self.__tv_object.tv_on:
             if self.__tv_object.current_channel < \
-                    self.__tv_object.get_max_channel():
+                    self.__tv_object.max_channel:
                 self.__tv_object.tv_channel_up()
             else:
                 print(
                     f'TV is at the maximum channel: '
-                    f'{self.__tv_object.get_max_channel()}'
+                    f'{self.__tv_object.max_channel}'
                 )
 
     def rc_channel_down(self):  # interacts with 'channel down' TV method.
@@ -104,11 +108,11 @@ class RemoteControl:
 
     def rc_channel_dial(self, channel_number):  # selects TV channel number
         if self.__tv_object.tv_on:
-            if 0 <= channel_number <= self.__tv_object.get_max_channel():
+            if 0 <= channel_number <= self.__tv_object.max_channel:
                 self.__tv_object.current_channel = channel_number
             else:
                 print(f'Channel number must be between 0 and '
-                      f'{self.__tv_object.get_max_channel()}')
+                      f'{self.__tv_object.max_channel}')
 
     def rc_channel_display(self):  # shows TV current channel
         if self.__tv_object.tv_on:
