@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "nenv\\Scripts\\python.exe"
+    "python.pythonPath": "nenv\\Scripts\\python.exe",
+    "code-runner.executorMap": {
+        "python": "nenv\\Scripts\\python.exe",
+
+    }
 }
