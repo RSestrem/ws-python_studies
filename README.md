@@ -1,6 +1,7 @@
-# python_studies
-Estudos da linguagem Python
+# Python Studies
 
-> Desenvolvimento de classes, funções e execução de exercícios.
+## Estudos da linguagem Python**
 
- * Todos os códigos produzidos estão localizados na pasta source.
+Desenvolvimento de classes, funções e execução de exercícios.
+
+ * Todos os códigos produzidos estão localizados na pasta source.*
